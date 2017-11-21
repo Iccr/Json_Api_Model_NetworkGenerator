@@ -50,6 +50,7 @@ def resource_class
       output = "@objc dynamic var #{result.first}: #{result.last}? \n"
       v << output
     end
+    v << "@objc dynamic var id: String? \n"
     v
   end
 
@@ -81,6 +82,7 @@ def resource_class
       output =  "model.#{result} = self.#{result} ?? \"\" "  + "\n"
       v << output
     end
+    v << "model.id = self.id ?? \"-1\" "  + "\n"
     v
   end
 
@@ -133,10 +135,6 @@ def realm_class
     v = ""
     attributes.each do |a|
 
-      # @objc dynamic var totalPrice: String = ""
-
-      #bug its ouptutting totalPrice:String? = ""
-
       result = a.split(':')
       attribute_name = result.first
       type_name = result.last
@@ -161,6 +159,7 @@ def realm_class
       end
       v << output
     end
+    v << "@objc dynamic var id: String = \"-1\" \n"
     v
   end
 
@@ -173,6 +172,7 @@ def realm_class
       output =  "model.#{result} = self.#{result}"  + "\n"
       v << output
     end
+      v << "model.id = self.id"  + "\n"
     v
   end
 
