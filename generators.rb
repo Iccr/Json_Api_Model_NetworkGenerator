@@ -5,6 +5,8 @@ require 'optparse'
 require 'active_support/inflector'
 require 'pry'
 
+
+@file_base_path = "/Users/shishirsapkota/office/B2BOrderingiOS/B2BOrdering/Model"
 @model_name = 'model'
 @attributes = []
 @to_one_relations =
@@ -60,7 +62,7 @@ def resource_class
 
       result = a.split(':').first
 
-      output =  "\"#{result}\": " + ' Attribute().serializeAs("key-value")' + "\n"
+      output =  "\"#{result}\": " + ' Attribute().serializeAs("result")' + "\n"
       v << output
     end
     v
@@ -114,7 +116,6 @@ def resource_class
 
   }
   RESOURCE
-  puts my_resource_class
   my_resource_class
 end
 
@@ -199,7 +200,6 @@ def realm_class
 
   }
   REALM
-  puts my_realm_class
   my_realm_class
 end
 
@@ -214,7 +214,7 @@ def model_class
     attributes.each do |a|
       # ATTRIBUTEs   eg name:String?  price:Double?
       result = a.split(':')
-      output = "var #{result.first}: #{result.last} \n"
+      output = "var #{result.first}: #{result.last}? \n"
       v << output
     end
     v
@@ -246,6 +246,9 @@ def generate_module
   #{model_class}
 
   APP
+  puts app
+  app
 end
 
-generate_module
+code = generate_module
+File.write(@file_base_path + "/#{@model_name}.swift", code)
