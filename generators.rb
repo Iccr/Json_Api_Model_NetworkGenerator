@@ -114,73 +114,120 @@ def resource_class
 
   }
   RESOURCE
-  my_resource_class
   puts my_resource_class
+  my_resource_class
 end
 
 
-def generate_realm_attributes attributes
-  v = ""
-  attributes.each do |a|
 
-    # @objc dynamic var totalPrice: String = ""
 
-    #bug its ouptutting totalPrice:String? = ""
 
-    result = a.split(':')
-    attribute_name = result.first
-    type_name = result.last
-    if(
-      attribute_name.include?("Int") || attribute_name.include?("Double") ||
-      attribute_name.include?("String") || attribute_name.include?("NSNumber")
-    )
-    attribute_name[-1] = ''
-    end
 
-    output = ""
-    if type_name.include? "]"
-      output = "@objc dynamic var #{attribute_name}: #{type_name} = [] \n"
-    elsif type_name.include? "Int"
-      output = "@objc dynamic var #{attribute_name}: #{type_name} = 0 \n"
-    elsif type_name.include? "Double"
-      output = "@objc dynamic var #{attribute_name}: #{type_name} = 0.0 \n"
-    elsif type_name.include? "NSNumber"
-      output = "@objc dynamic var #{attribute_name}: #{type_name} = 0.0 \n"
-    else
-      output = "@objc dynamic var #{attribute_name}: #{type_name} = \"\" \n"
-    end
-    v << output
-  end
-  puts v
-end
 
 
 def generate_realm_class
+
+  def generate_realm_attributes attributes
+    v = ""
+    attributes.each do |a|
+
+      # @objc dynamic var totalPrice: String = ""
+
+      #bug its ouptutting totalPrice:String? = ""
+
+      result = a.split(':')
+      attribute_name = result.first
+      type_name = result.last
+      if(
+        attribute_name.include?("Int") || attribute_name.include?("Double") ||
+        attribute_name.include?("String") || attribute_name.include?("NSNumber")
+      )
+      attribute_name[-1] = ''
+      end
+
+      output = ""
+      if type_name.include? "]"
+        output = "@objc dynamic var #{attribute_name}: #{type_name} = [] \n"
+      elsif type_name.include? "Int"
+        output = "@objc dynamic var #{attribute_name}: #{type_name} = 0 \n"
+      elsif type_name.include? "Double"
+        output = "@objc dynamic var #{attribute_name}: #{type_name} = 0.0 \n"
+      elsif type_name.include? "NSNumber"
+        output = "@objc dynamic var #{attribute_name}: #{type_name} = 0.0 \n"
+      else
+        output = "@objc dynamic var #{attribute_name}: #{type_name} = \"\" \n"
+      end
+      v << output
+    end
+    v
+  end
+
+  # working
+  def assignVariables attributes
+    v = ""
+    attributes.each do |a|
+      # model.totalPrice = self.totalPrice ?? ""
+      result = a.split(':').first
+      output =  "model.#{result} = self.#{result}"  + "\n"
+      v << output
+    end
+    v
+  end
+
+
   my_realm_class = <<-REALM
   class #{@model_name}RealmModel: Object {
-    @objc dynamic var totalPrice: String = ""
-    @objc dynamic var id: String = ""
+
+    // Attributes
+    #{generate_realm_attributes @attributes}
+
     override class func primaryKey() -> String? {
       return "id"
     }
 
-    func resourceModel() -> Cart {
-      let model = resourceModel()
-      model.totalPrice = self.totalPrice
+    func resourceModel() -> #{@model_name} {
+      let model = #{@model_name}()
+      #{assignVariables @attributes}
       return model
     }
 
-    func normalModel() -> CartModel {
-      let model = CartModel()
-      model.totalPrice = self.totalPrice
+    func normalModel() -> #{@model_name}Model {
+      let model = #{@model_name}Model()
+      #{assignVariables @attributes}
       return model
     }
 
   }
   REALM
-
+  puts my_realm_class
+  my_realm_class
 end
 
+
+
+
+
+def generate_normal_model
+
+  def generate_normal_attributes attributes
+    v = ""
+    attributes.each do |a|
+      # ATTRIBUTEs   eg name:String?  price:Double?
+      result = a.split(':')
+      output = "var #{result.first}: #{result.last} \n"
+      v << output
+    end
+    v
+  end
+
+  my_normal_model = <<-NORMALMODEL
+  class #{@model_name}Model {
+    #{generate_normal_attributes @attributes}
+  }
+  NORMALMODEL
+  puts my_normal_model
+  my_normal_model
+end
 
 # app = <<-MY_CODE
 #
@@ -220,5 +267,6 @@ end
 # MY_CODE
 # end
 
-generate_realm_attributes @attributes
+# generate_realm_class
 # resource_class
+generate_normal_model
