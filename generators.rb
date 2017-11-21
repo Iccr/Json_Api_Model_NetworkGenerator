@@ -125,7 +125,7 @@ end
 
 
 
-def generate_realm_class
+def realm_class
 
   def generate_realm_attributes attributes
     v = ""
@@ -207,7 +207,7 @@ end
 
 
 
-def generate_normal_model
+def model_class
 
   def generate_normal_attributes attributes
     v = ""
@@ -225,48 +225,27 @@ def generate_normal_model
     #{generate_normal_attributes @attributes}
   }
   NORMALMODEL
-  puts my_normal_model
   my_normal_model
 end
 
-# app = <<-MY_CODE
-#
-#
-# import Foundation
-# import RealmSwift
-#
-# #{resource_class}
-#
-#
-# class CartRealmModel: Object {
-#   @objc dynamic var totalPrice: String = ""
-#   @objc dynamic var id: String = ""
-#   override class func primaryKey() -> String? {
-#     return "id"
-#   }
-#
-#   func resourceModel() -> Cart {
-#     let model = resourceModel()
-#     model.totalPrice = self.totalPrice
-#     return model
-#   }
-#
-#   func normalModel() -> CartModel {
-#     let model = CartModel()
-#     model.totalPrice = self.totalPrice
-#     return model
-#   }
-#
-# }
-#
-#
-# class CartModel {
-#   var totalPrice: String?
-# }
-#
-# MY_CODE
-# end
+def generate_module
+  app = <<-APP
 
-# generate_realm_class
-# resource_class
-generate_normal_model
+
+  import Foundation
+  import RealmSwift
+
+  // resource class
+
+  #{resource_class}
+
+  // realm class
+  #{realm_class}
+
+  // model class
+  #{model_class}
+
+  APP
+end
+
+generate_module
