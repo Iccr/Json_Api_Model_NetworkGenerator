@@ -218,6 +218,7 @@ def model_class
       output = "var #{result.first}: #{result.last}? \n"
       v << output
     end
+    v << "var id: String? \n"
     v
   end
 
