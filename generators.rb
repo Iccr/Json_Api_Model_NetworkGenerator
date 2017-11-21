@@ -1,5 +1,6 @@
 
 # ruby generators.rb --m=cart --a=name:string --a=price:Int
+# ruby generators.rb --m=ckart --a=price:String  --a=weight:String --a=quantity:String --a='price:[Int]'
 
 require 'optparse'
 require 'active_support/inflector'
@@ -62,7 +63,7 @@ def resource_class
 
       result = a.split(':').first
 
-      output =  "\"#{result}\": " + ' Attribute().serializeAs("result")' + "\n"
+      output =  "\"#{result}\": " + " Attribute().serializeAs(\"#{result}\")" + "\n"
       v << output
     end
     v
