@@ -12,7 +12,7 @@ require 'pry'
 @attributes = []
 @to_one_relations =
 @to_many_relations = []
-
+@api_handler = true
 
 OptionParser.new do |opt|
 
@@ -31,6 +31,10 @@ OptionParser.new do |opt|
   #to_many_relations
   opt.on('-r RELATON') { |o| to_many_relations.push(o) }
   opt.on('--relations RELATON') { |o| to_many_relations.push(o) }
+
+  # api handler
+  opt.on('-api HANDLER') { |o| @api_handler = true }
+
 
 end.parse!
 
@@ -254,3 +258,52 @@ end
 
 code = generate_module
 File.write(@file_base_path + "/#{@model_name}.swift", code)
+
+if @api_handler
+  generate_api
+end
+
+
+def generate_api
+  api = <<-API
+  import Foundation
+  import Alamofire
+
+  protocol #{@model_name}APIManager {
+      var apiManager: ApiHandel<#{@model_name}> {get}
+  }
+
+  extension #{@model_name}APIManager {
+      var apiManager: ApiHandel<#{@model_name}> {
+          return ApiHandel<#{@model_name}>()
+      }
+  }
+
+  protocol #{@model_name}Api: #{@model_name}APIManager, RealmPersistenceType {
+      func add#{@model_name}(productId: String, unitId: String, quantity: Double, success: @escaping () -> (), failure: @escaping (Error) -> ())
+  }
+
+  extension AddToCartApi {
+      func addToCart(productId: String, unitId: String, quantity: Double, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+          guard let product: ProductRealmModel = self.fetch(primaryKey: productId), let unit: UnitRealmModel = self.fetch(primaryKey: unitId) else {return}
+          let model = Cartproduct()
+          model.quantity = "\(quantity)"
+          model.unit = unit.resourceModel()
+          model.price = unit.markPrice
+          model.product = product.resourceModel()
+          model.weight = product.weight
+
+          if NetworkReachabilityManager()?.isReachable == true {
+              self.apiManager.addOrUpdate(model, success: { (model) in
+                  self.save(models: [model.realmModel()])
+                  success()
+              }, failure: failure)
+          } else {
+              let error = GlobalConstants.Errors.internetConnectionOffline
+              failure(error)
+          }
+      }
+  }
+
+  API
+end
