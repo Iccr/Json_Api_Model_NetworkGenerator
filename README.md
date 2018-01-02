@@ -90,10 +90,10 @@ class Profile: Resource {```
         return model
     }
     
-```}```
+}
 
 // realm class
-```
+
 class ProfileRealmModel: Object {
     
     // Attributes
