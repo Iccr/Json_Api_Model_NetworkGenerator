@@ -90,11 +90,11 @@ class Profile: Resource {```
         return model
     }
     
-}
+```}```
 
-```
 // realm class
-class ProfileRealmModel: Object {```
+```
+class ProfileRealmModel: Object {
     
     // Attributes
     @objc dynamic var email: String = "" 
@@ -130,7 +130,7 @@ class ProfileRealmModel: Object {```
         return model
     }
     
-```}
+}
 
 
 // model class
