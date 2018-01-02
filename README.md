@@ -44,10 +44,10 @@ sorry for indentation proble. cmd+ a and ctrl+i will do magic.
 please read the errors in comments. they are bugs. Bot very big prob to solve.
 
 
-import Foundation
+```import Foundation
 import RealmSwift
 
-class Profile: Resource {
+class Profile: Resource {```
     
     // Attributes
     @objc dynamic var email: String? 
@@ -92,9 +92,9 @@ class Profile: Resource {
     
 }
 
-
+```
 // realm class
-class ProfileRealmModel: Object {
+class ProfileRealmModel: Object {```
     
     // Attributes
     @objc dynamic var email: String = "" 
@@ -130,7 +130,7 @@ class ProfileRealmModel: Object {
         return model
     }
     
-}
+```}
 
 
 // model class
@@ -141,17 +141,15 @@ class ProfileModel {
     var lastName: String?
     var id: String?
     
-}
+}```
 
 
 
-
-
-the part of the function to fetch the api  looks like this. we first get the resource model. then convert to realmModel and save.
-then we convert the realmModel and convert to profileModel. Profile Model is then feed to the app. and we use it every wehere.
+the part of the function to fetch the api  looks like this. we first get the ```resource model```. then convert to ```realmModel``` and save.
+then we convert the ```realmModel``` and convert to ```profileModel```. ```ProfileModel``` is then feed to the app. and we use it every wehere.
 while posting or updating. the normal model is converted to realm and further to recource model.
 
- func fetchProfile(success: @escaping (ProfileModel) -> (), failure: @escaping  (Error) -> ()) {
+``` func fetchProfile(success: @escaping (ProfileModel) -> (), failure: @escaping  (Error) -> ()) {
         func sendSuccess() {
             let realmModels: [ProfileRealmModel] = self.fetch()
             if let models = realmModels.map({$0.normalModel()}).first {
@@ -176,4 +174,4 @@ while posting or updating. the normal model is converted to realm and further to
             sendSuccess()
             failure(error)
         }
-    }
+    }```
