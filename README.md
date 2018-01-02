@@ -47,7 +47,7 @@ please read the errors in comments. they are bugs. Bot very big prob to solve.
 ```import Foundation
 import RealmSwift
 
-class Profile: Resource {```
+class Profile: Resource {
     
     // Attributes
     @objc dynamic var email: String? 
