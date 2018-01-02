@@ -3,7 +3,7 @@
 attempt to automate the process of generating the models for jsonApi.org.
 we use three models for same purpose.
 
-Resource model -> its is used for fetchin posting updating the models. It inherites the Resource class.
+```Resource model``` -> its is used for fetchin posting updating the models. It inherites the Resource class.
 RealmModel -> this model is used for saving to the realm.
 normalModel -> this model is used app wide.
 
