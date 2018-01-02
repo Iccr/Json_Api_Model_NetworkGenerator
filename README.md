@@ -4,8 +4,8 @@ attempt to automate the process of generating the models for jsonApi.org.
 we use three models for same purpose.
 
 ```Resource model``` -> its is used for fetchin posting updating the models. It inherites the Resource class.
-RealmModel -> this model is used for saving to the realm.
-normalModel -> this model is used app wide.
+```RealmModel``` -> this model is used for saving to the realm.
+```normalModel``` -> this model is used app wide.
 
 we need to write the converting functions too. which is easy but tedious and time consuming.
 with few bugs i successfully was able to automate these things.
@@ -14,23 +14,23 @@ Generates models for JsonApi.org specification along with Realm model for offlin
 Implements Spine library.
 
 It generates three models.
-Resource model -> its is used for fetchin posting updating the models. It inherites the Resource class.
-RealmModel -> this model is used for saving to the realm.
-normalModel -> this model is used app wide.
+```Resource model``` -> its is used for fetchin posting updating the models. It inherites the Resource class.
+```RealmModel``` -> this model is used for saving to the realm.
+```normalModel``` -> this model is used app wide.
 
 Syntax: 
-ruby generator --m=ModelName --a=VariableName:VariableType --a=VariableName1:VariableType1 --a...... as long as the models attributes
+```ruby generator --m=ModelName --a=VariableName:VariableType --a=VariableName1:VariableType1 --a...... as long as the models attributes```
 
 
 example:
 first assign path to your project folder.(any folder will work)
 At the top of the file, generator.rb
 
-@file_base_path = "/Users/shishirsapkota/office/B2BOrderingiOS/B2BOrdering/Model"
+```@file_base_path = "/Users/shishirsapkota/office/B2BOrderingiOS/B2BOrdering/Model"```
 
 this will generate models at this folder.
 
-uby generators.rb --m=Profile --a=email:String --a=username:String --a=firstName:String --a=lastName:String
+```ruby generators.rb --m=Profile --a=email:String --a=username:String --a=firstName:String --a=lastName:String```
 
 will generate Profile.swift file
 
