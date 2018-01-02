@@ -18,7 +18,10 @@ It generates three models.
 ```RealmModel``` -> this model is used for saving to the realm.
 ```normalModel``` -> this model is used app wide.
 
+
+
 Syntax: 
+
 ```ruby generator --m=ModelName --a=VariableName:VariableType --a=VariableName1:VariableType1 --a...... as long as the models attributes```
 
 
@@ -30,7 +33,9 @@ At the top of the file, generator.rb
 
 this will generate models at this folder.
 
+
 ```ruby generators.rb --m=Profile --a=email:String --a=username:String --a=firstName:String --a=lastName:String```
+
 
 will generate Profile.swift file
 
