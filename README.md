@@ -141,10 +141,10 @@ class ProfileModel {
     var lastName: String?
     var id: String?
     
-}```
+}
 
 
-
+```
 the part of the function to fetch the api  looks like this. we first get the ```resource model```. then convert to ```realmModel``` and save.
 then we convert the ```realmModel``` and convert to ```profileModel```. ```ProfileModel``` is then feed to the app. and we use it every wehere.
 while posting or updating. the normal model is converted to realm and further to recource model.
@@ -174,4 +174,4 @@ while posting or updating. the normal model is converted to realm and further to
             sendSuccess()
             failure(error)
         }
-    }```
+    }
