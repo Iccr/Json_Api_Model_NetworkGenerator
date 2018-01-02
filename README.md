@@ -46,7 +46,7 @@ will generate Profile.swift file
 // resource class containing following code:
 sorry for indentation proble. cmd+ a and ctrl+i will do magic.
 
-# please read the errors in comments. they are bugs. Bot very big prob to solve.
+### please read the errors in comments. they are bugs. But very big prob to solve.
 
 
 ```import Foundation
