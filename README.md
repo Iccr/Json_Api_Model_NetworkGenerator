@@ -1,6 +1,6 @@
 # Json_Api_Model_NetworkGenerator
 
-attempt to automate the process of generating the models for jsonApi.org.
+#### attempt to automate the process of generating the models for jsonApi.org.
 we use three models for same purpose.
 
 ```Resource model``` -> its is used for fetchin posting updating the models. It inherites the Resource class.
@@ -10,7 +10,7 @@ we use three models for same purpose.
 we need to write the converting functions too. which is easy but tedious and time consuming.
 with few bugs i successfully was able to automate these things.
 
-Generates models for JsonApi.org specification along with Realm model for offline persistence of data.
+## Generates models for JsonApi.org specification along with Realm model for offline persistence of data.
 Implements Spine library.
 
 It generates three models.
@@ -20,12 +20,12 @@ It generates three models.
 
 
 
-Syntax: 
+## Syntax: 
 
 ```ruby generator --m=ModelName --a=VariableName:VariableType --a=VariableName1:VariableType1 --a...... as long as the models attributes```
 
 
-example:
+## example:
 first assign path to your project folder.(any folder will work)
 At the top of the file, generator.rb
 
@@ -46,7 +46,7 @@ will generate Profile.swift file
 // resource class containing following code:
 sorry for indentation proble. cmd+ a and ctrl+i will do magic.
 
-please read the errors in comments. they are bugs. Bot very big prob to solve.
+# please read the errors in comments. they are bugs. Bot very big prob to solve.
 
 
 ```import Foundation
