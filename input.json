@@ -1,0 +1,256 @@
+{
+  "data": {
+    "lubricants": [
+      {
+        "id": 1,
+        "categoryId": 1,
+        "name": "API CF SAE 20W-50",
+        "code": "FXLO-12XL7B-B",
+        "displayOrder": 1,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/259e4dd345427157f51884f7033fe381.png",
+        "images": [
+          {
+            "id": 11,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/259e4dd345427157f51884f7033fe381.png",
+            "displayOrder": 1
+          }
+        ],
+        "about": "The only zero-maintenance VRLA motorcycle battery with the X Factor. Built with world-class Calcium Effects Technology, it delivers a power-packed performance and endures tough Indian road conditions. Xplore comes with a 24-month pro-rata warranty that includes a 24-month free replacement warranty. Exide XLTZ4 Applicable for following below vehicle Self (Electric) Start Mode Scooter Vehicle Suzuki : LetS Honda : New Dio - SCV110FD Honda : Activa **Only above 2011 onwards Activa vehicle's. Honda : Aviator Self (Electric) Start Mode bikes Vehicle Hero Vehicle Mode:Self (Electric) Start Splendour NXG Pro,Ignitor New,Maestro,HF Delux,Passion 10,Glamour (New),Glamour F1(New),CD Delux,CD Deluxe Pro,Passion Pro,Super Splendour (New),Glamour Pro,Glamour FI Suzuki Vehicle Mode:Self (Electric) Start",
+        "specification": "GENERAL\nBrand : EXIDE\nModel Number : Xplore FXLO-XLTZ4-\nSuitable For : Bike\nBattery Capacity : 3 Ah\nBattery Type : VRLA\nMaintenance Free : Yes\nVehicle Brand : Honda\nVehicle Model Name : 3 Series\nVehicle Model Year : above 2011\nWith Electrolyte : Yes\nVoltage Output : 12 V\nModel Name : Xplore\nFactory Charged : Yes\nAcid Level Indicator : No\nMaterial : Plastic\nPOWER FEATURES : Operating Voltage : 12 V",
+        "documents": [
+          {
+            "id": 1,
+            "name": "Product Catalogue",
+            "link": "http://exidebatterystore.com/catalouge/exide-xplore-leaflet.pdf"
+          }
+        ],
+        "compatibilities": "Tigor Revotron XZ, Bolt"
+      },
+      {
+        "id": 3,
+        "categoryId": 1,
+        "name": "MAKÂ® 4T PLUS",
+        "code": "FELO-XLTZ9",
+        "displayOrder": 2,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/5b2a3eff23bf60895a8c3a862e1e7ecd.png",
+        "images": [
+          {
+            "id": 11,
+            "link": "https://s3.amazonaws.com/uploads.hipchat.com/228667/1562848/OkG91JWRSiW7RCG/banner2.png",
+            "displayOrder": 1
+          },
+          {
+            "id": 12,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/5b2a3eff23bf60895a8c3a862e1e7ecd.png",
+            "displayOrder": 2
+          }
+        ],
+        "about": "SAE 20W40\nAPI SL;  JASO T 903\nRECOMMENDED FOR\nMODERN MOTOR CYCLES\nSCOOTERS AND\nAUTOS\nPROVIDES SMOOTH CLUTCH PERFORMANCE\nEASY\nGEAR SHIFTING\nAVAILABLE IN  - BRLS, 50 LTR,1LTR AND 900 ml ",
+        "specification": "Capacity (AH) 10HR (REF) : 8.0\nElectrolyte Volume (litre) :  --- Liter\nCharging Current (A) :  --- \nBATTERY LAYOUT : LEFT LAYOUT",
+        "documents": [
+          {
+            "id": 1,
+            "name": "Product Catalogue",
+            "link": "http://exidebatterystore.com/catalouge/exide-xplore-leaflet.pdf"
+          }
+        ],
+        "compatibilities": "Tigor Revotron XE, Pulsar 150"
+      },
+      {
+        "id": 2,
+        "categoryId": 2,
+        "name": "MAKÂ® TATA MOTORS",
+        "code": "FER0-ERTUBULAR100L",
+        "displayOrder": 1,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/65fdefdb5d1d68d8a4e172d58b770786.png",
+        "images": [
+          {
+            "id": 21,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/65fdefdb5d1d68d8a4e172d58b770786.png",
+            "displayOrder": 1
+          }
+        ],
+        "about": "ONLY CO BRANDED OIL RECOMMENDED BY TATA MOTORS\nPREMIUM GENUINE ENGINE OIL\nMAKÂ® TATA MOTORS CF4 GEO\nMAKÂ® TATA MOTORS CH4 GEO\nAVAILABLE IN BRLS, 15 LT, 10 LT, 2.5 LT & 1 LT\nLONG LIFE GEAR OILS\nMAKÂ® TATA MOTORS SPIROL LL SAE 80W90 \nMAKÂ® TATA MOTORS SPIROL LL SAE 85W140\nAVAILABLE IN BRLS, 5 LT & 1 LT",
+        "specification": "GENERAL\nBrand : EXIDE\nModel Number : Xplore FXLO-XLTZ4-\nSuitable For : Bike\nBattery Capacity : 3 Ah\nBattery Type : VRLA\nMaintenance Free : Yes\nVehicle Brand : Honda\nVehicle Model Name : 3 Series\nVehicle Model Year : above 2011\nWith Electrolyte : Yes\nVoltage Output : 12 V\nModel Name : Xplore\nFactory Charged : Yes\nAcid Level Indicator : No\nMaterial : Plastic\nPOWER FEATURES : Operating Voltage : 12 V",
+        "documents": [],
+        "compatibilities": "Tigor Revotron XE, Tigor Revoltron XT, Pulsar 200, Hexa, Bolt Revotron XM"
+      }
+    ],
+    "vehicle": [
+      {
+        "id": 1,
+        "categoryId": 1,
+        "name": "API CF SAE 20W-50",
+        "code": "FXLO-12XL7B-B",
+        "displayOrder": 1,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/259e4dd345427157f51884f7033fe381.png",
+        "images": [
+          {
+            "id": 11,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/259e4dd345427157f51884f7033fe381.png",
+            "displayOrder": 1
+          }
+        ],
+        "about": "The only zero-maintenance VRLA motorcycle battery with the X Factor. Built with world-class Calcium Effects Technology, it delivers a power-packed performance and endures tough Indian road conditions. Xplore comes with a 24-month pro-rata warranty that includes a 24-month free replacement warranty. Exide XLTZ4 Applicable for following below vehicle Self (Electric) Start Mode Scooter Vehicle Suzuki : LetS Honda : New Dio - SCV110FD Honda : Activa **Only above 2011 onwards Activa vehicle's. Honda : Aviator Self (Electric) Start Mode bikes Vehicle Hero Vehicle Mode:Self (Electric) Start Splendour NXG Pro,Ignitor New,Maestro,HF Delux,Passion 10,Glamour (New),Glamour F1(New),CD Delux,CD Deluxe Pro,Passion Pro,Super Splendour (New),Glamour Pro,Glamour FI Suzuki Vehicle Mode:Self (Electric) Start",
+        "specification": "GENERAL\nBrand : EXIDE\nModel Number : Xplore FXLO-XLTZ4-\nSuitable For : Bike\nBattery Capacity : 3 Ah\nBattery Type : VRLA\nMaintenance Free : Yes\nVehicle Brand : Honda\nVehicle Model Name : 3 Series\nVehicle Model Year : above 2011\nWith Electrolyte : Yes\nVoltage Output : 12 V\nModel Name : Xplore\nFactory Charged : Yes\nAcid Level Indicator : No\nMaterial : Plastic\nPOWER FEATURES : Operating Voltage : 12 V",
+        "documents": [
+          {
+            "id": 1,
+            "name": "Product Catalogue",
+            "link": "http://exidebatterystore.com/catalouge/exide-xplore-leaflet.pdf"
+          }
+        ],
+        "compatibilities": "Tigor Revotron XZ, Bolt"
+      },
+      {
+        "id": 3,
+        "categoryId": 1,
+        "name": "MAKÂ® 4T PLUS",
+        "code": "FELO-XLTZ9",
+        "displayOrder": 2,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/5b2a3eff23bf60895a8c3a862e1e7ecd.png",
+        "images": [
+          {
+            "id": 11,
+            "link": "https://s3.amazonaws.com/uploads.hipchat.com/228667/1562848/OkG91JWRSiW7RCG/banner2.png",
+            "displayOrder": 1
+          },
+          {
+            "id": 12,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/5b2a3eff23bf60895a8c3a862e1e7ecd.png",
+            "displayOrder": 2
+          }
+        ],
+        "about": "SAE 20W40\nAPI SL;  JASO T 903\nRECOMMENDED FOR\nMODERN MOTOR CYCLES\nSCOOTERS AND\nAUTOS\nPROVIDES SMOOTH CLUTCH PERFORMANCE\nEASY\nGEAR SHIFTING\nAVAILABLE IN  - BRLS, 50 LTR,1LTR AND 900 ml ",
+        "specification": "Capacity (AH) 10HR (REF) : 8.0\nElectrolyte Volume (litre) :  --- Liter\nCharging Current (A) :  --- \nBATTERY LAYOUT : LEFT LAYOUT",
+        "documents": [
+          {
+            "id": 1,
+            "name": "Product Catalogue",
+            "link": "http://exidebatterystore.com/catalouge/exide-xplore-leaflet.pdf"
+          }
+        ],
+        "compatibilities": "Tigor Revotron XE, Pulsar 150"
+      },
+      {
+        "id": 2,
+        "categoryId": 2,
+        "name": "MAKÂ® TATA MOTORS",
+        "code": "FER0-ERTUBULAR100L",
+        "displayOrder": 1,
+        "thumbnail": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/65fdefdb5d1d68d8a4e172d58b770786.png",
+        "images": [
+          {
+            "id": 21,
+            "link": "http://www.sipraditrading.com.np/image_show/dynamic_uploads/600/800/65fdefdb5d1d68d8a4e172d58b770786.png",
+            "displayOrder": 1
+          }
+        ],
+        "about": "ONLY CO BRANDED OIL RECOMMENDED BY TATA MOTORS\nPREMIUM GENUINE ENGINE OIL\nMAKÂ® TATA MOTORS CF4 GEO\nMAKÂ® TATA MOTORS CH4 GEO\nAVAILABLE IN BRLS, 15 LT, 10 LT, 2.5 LT & 1 LT\nLONG LIFE GEAR OILS\nMAKÂ® TATA MOTORS SPIROL LL SAE 80W90 \nMAKÂ® TATA MOTORS SPIROL LL SAE 85W140\nAVAILABLE IN BRLS, 5 LT & 1 LT",
+        "specification": "GENERAL\nBrand : EXIDE\nModel Number : Xplore FXLO-XLTZ4-\nSuitable For : Bike\nBattery Capacity : 3 Ah\nBattery Type : VRLA\nMaintenance Free : Yes\nVehicle Brand : Honda\nVehicle Model Name : 3 Series\nVehicle Model Year : above 2011\nWith Electrolyte : Yes\nVoltage Output : 12 V\nModel Name : Xplore\nFactory Charged : Yes\nAcid Level Indicator : No\nMaterial : Plastic\nPOWER FEATURES : Operating Voltage : 12 V",
+        "documents": [],
+        "compatibilities": "Tigor Revotron XE, Tigor Revoltron XT, Pulsar 200, Hexa, Bolt Revotron XM"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Brake Fluid",
+        "displayOrder": 2,
+        "parentId": 0
+      },
+      {
+        "id": 2,
+        "name": "Coolant",
+        "displayOrder": 3,
+        "parentId": 0
+      },
+      {
+        "id": 3,
+        "name": "Transmission Oil",
+        "displayOrder": 6,
+        "parentId": 0
+      },
+      {
+        "id": 4,
+        "name": "Engine Oil",
+        "displayOrder": 1,
+        "parentId": 0
+      },
+      {
+        "id": 5,
+        "name": "Other",
+        "displayOrder": 3,
+        "parentId": 0
+      },
+      {
+        "id": 11,
+        "name": "Cat 2 Oil",
+        "displayOrder": 2,
+        "parentId": 5
+      },
+      {
+        "id": 12,
+        "name": "Cat 3 Oil",
+        "displayOrder": 1,
+        "parentId": 11
+      },
+      {
+        "id": 13,
+        "name": "Cat 4 Oil",
+        "displayOrder": 1,
+        "parentId": 12
+      }
+    ]
+  },
+  "messages": null,
+  "meta": null,
+  "pagination": null
+}
+
+
+/* class BatteryModel: Object, Mappable {
+    var type: String {return ProductType.battery}
+    dynamic var id: Int = 0
+    dynamic var categoryId: Int = 0
+    dynamic var name: String = ""
+    dynamic var thumbnail: String = ""
+    dynamic var about: String = ""
+    dynamic var specification: String = ""
+    dynamic var productCode: String = ""
+    dynamic var displayOrder: Int = 0
+    dynamic var compatibilities: String = ""
+    var _images: [ProductProfileImageType] { return Array(self.images) }
+    var _documents: [ProductProfileDocumentType] { return Array(self.documents) }
+
+     var images = List<BatteryImage>()
+     var documents = List<Documents>()
+
+    required convenience init?(map: Map) {
+        self.init()
+    }
+
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+
+    func mapping(map: Map) {
+
+        id <- map["id"]
+        categoryId <- map["categoryId"]
+        name <- map["name"]
+        thumbnail <- map["thumbnail"]
+        about <- map["about"]
+        displayOrder <- map["displayOrder"]
+        specification <- map["specification"]
+        productCode <- map["code"]
+        var _images = [BatteryImage]()
+        _images <- map["images"]
+        _images.forEach(self.images.append)
+        compatibilities <- map["compatibilities"]
+
+        var documents = [Documents]()
+        documents <- map["documents"]
+        documents.forEach(self.documents.append)
+    }
+} */
