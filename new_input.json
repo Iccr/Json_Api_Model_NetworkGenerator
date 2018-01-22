@@ -1,0 +1,74 @@
+{
+    "data": {
+        "products": [
+            {
+                "id": 1,
+                "name": "Auto GPS Compressor",
+                "price": 0,
+                "warranty": true,
+                "discount": 1,
+                "rating": 1,
+                "description": "Maiores officia consectetur tenetur quidem nihil repellat et. Voluptas vitae et quis autem ut. Aut dolorem odit veniam nihil.",
+                "specifications": [
+                    {
+                        "key": "ni",
+                        "value": "juu go"
+                    }
+                ],
+                "seller": {
+                    "id": 1,
+                    "name": "Evalyn Kovacek",
+                    "email": "cristina_roberts@grimesdickens.name",
+                    "phone_number": "900.672.8621",
+                    "verified": false,
+                    "rating": 1,
+                    "address": {
+                        "latitude": 39.0788984258721,
+                        "longitude": -73.8618025934729,
+                        "street_name": "Reichertweg",
+                        "user_id": 1
+                    }
+                },
+                "links": {
+                    "self": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=1&page%5Bsize%5D=2",
+                    "next": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=2&page%5Bsize%5D=2",
+                    "last": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=50&page%5Bsize%5D=2"
+                }
+            },
+            {
+                "id": 2,
+                "name": "Auto Digital Tuner",
+                "price": 10,
+                "warranty": false,
+                "discount": 10,
+                "rating": 1,
+                "description": "Explicabo officia quos ut omnis aut earum odio ut. Quis ut qui nobis dignissimos dolor iusto. Velit amet dolor rerum ea sit doloribus. Aut consequatur dolore ut illo veniam culpa maiores quis. Exercitationem aut dolores repellendus non similique.",
+                "specifications": [
+                    {
+                        "key": "san",
+                        "value": "juu go"
+                    }
+                ],
+                "seller": {
+                    "id": 2,
+                    "name": "Vania Smith",
+                    "email": "dung.friesen@parker.ca",
+                    "phone_number": "303-241-3530 x85250",
+                    "verified": true,
+                    "rating": 3,
+                    "address": {
+                        "latitude": 40.6609944585817,
+                        "longitude": -73.9025768857695,
+                        "street_name": "Keshiastr.",
+                        "user_id": 2
+                    }
+                },
+                "links": {
+                    "self": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=1&page%5Bsize%5D=2",
+                    "next": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=2&page%5Bsize%5D=2",
+                    "last": "http://localhost:3000/api/v1/search?page%5Bnumber%5D=50&page%5Bsize%5D=2"
+                }
+            }
+        ]
+    }
+}

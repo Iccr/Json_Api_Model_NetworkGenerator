@@ -1,0 +1,26 @@
+
+  {
+    "id": 1,
+    "name": "Evalyn Kovacek",
+    "email": "cristina_roberts@grimesdickens.name",
+    "phone_number": "900.672.8621",
+    "verified": false,
+    "rating": 1,
+    "testArray1": [1,2,3,4,6],
+    "testArray2": [
+      {
+        "url" : "www.www.www"
+      }
+    ],
+    "address": {
+        "latitude": 39.0788984258721,
+        "longitude": -73.8618025934729,
+        "street_name": "Reichertweg",
+        "user_id": 1,
+        "user": {
+          "name": "naam",
+          "thegana": "ghar"
+        }
+    }
+
+}
