@@ -1,11 +1,19 @@
 require 'json'
 require 'pp'
 require 'pry'
+require 'rest-client'
 
 
 class String
   def camelize
     splitted = self.split('_')
+    camel_text = splitted[1..-1].collect(&:capitalize).join
+    camel_text = splitted.first.nil? ? self : (splitted.first + camel_text)
+    camel_text.unHyphoniezed
+  end
+
+  def unHyphoniezed
+    splitted = self.split('-')
     camel_text = splitted[1..-1].collect(&:capitalize).join
     splitted.first.nil? ? self : (splitted.first + camel_text)
   end
@@ -18,6 +26,23 @@ class Parser
     @realm = realm
     @parsed = {}
   end
+
+  def load_from_config path
+    config = File.read(path)
+    config_json = JSON.parse(config)
+    @url = config_json["url"]
+    @headers = config_json["headers"]
+    self.fetch!
+  end
+
+  def fetch!
+    puts 'fetching'
+    json = RestClient.get(@url, headers = @headers)
+    puts 'fetched'
+    @json = JSON.parse(json)
+    self.parse!
+  end
+
 
   def attribute_type attribute
     result = ""
@@ -175,4 +200,4 @@ class Attribute
 end
 
 parser = Parser.new('new_input.json')
-parser.parse!
+parser.load_from_config("config.json")
