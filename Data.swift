@@ -1,5 +1,5 @@
 class Data: Object, Mappable {
-		var products = List<Products>()
+		var productsItem = List<ProductsItem>()
 
 		required convenience init?(map: Map) {
 				self.init()
@@ -11,7 +11,8 @@ class Data: Object, Mappable {
 		}
 
 		func mapping(map: Map) {
-		
+				productsItem <- (map["products_item"], ListTransform<ProductsItem>())
+
 		}
 }
 

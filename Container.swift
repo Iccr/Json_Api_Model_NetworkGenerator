@@ -11,7 +11,8 @@ class Container: Object, Mappable {
 		}
 
 		func mapping(map: Map) {
-		
+				data <- map["data"]
+
 		}
 }
 

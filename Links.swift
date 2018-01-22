@@ -13,7 +13,10 @@ class Links: Object, Mappable {
 		}
 
 		func mapping(map: Map) {
-		
+				self <- map["self"]
+				next <- map["next"]
+				last <- map["last"]
+
 		}
 }
 

@@ -2,6 +2,15 @@ require 'json'
 require 'pp'
 require 'pry'
 
+
+class String
+  def camelize
+    splitted = self.split('_')
+    camel_text = splitted[1..-1].collect(&:capitalize).join
+    splitted.first.nil? ? self : (splitted.first + camel_text)
+  end
+end
+
 class Parser
 
   def initialize
@@ -54,9 +63,15 @@ def get_attribute_literal_prefix
   @realm ? "@objc dynamic " : ""
 end
 
-def get_array_attribute_literal name
-  @realm ? " = List<#{name.capitalize}>()" : ": [#{name.capitalize}] = []"
+def get_array_attribute_literal type
+  @realm ? " = List<#{type.capitalize.camelize}>()" : ": [#{type.capitalize}] = []"
 end
+
+def get_array_mapping_literal type
+  @realm ? "(map[\"#{type}\"], ListTransform<#{type.capitalize.camelize}>())" : "map[\"#{type}\"]"
+end
+
+
 
 class Attribute
   attr_accessor :name, :type, :is_array
@@ -94,18 +109,18 @@ def generate_attributes_literals json
         swiftClassAttributes.push(attribute)
       elsif value.is_a? Hash
         newSwiftClass = generate_attributes_literals value
-        @parsed.store(key.capitalize, newSwiftClass)
+        @parsed.store(key.capitalize.camelize, newSwiftClass)
         # string = "#{get_attribute_literal_prefix}var #{key}: #{key.capitalize}?\n"
         # swiftClass = swiftClass + string
-        attribute = Attribute.new(key, "#{key.capitalize}")
+        attribute = Attribute.new(key, "#{key}")
         swiftClassAttributes.push(attribute)
       elsif value.is_a? Array
         if value.first.is_a? Hash
           newSwiftClass = generate_attributes_literals value.first
-          @parsed.store(key.capitalize, newSwiftClass)
+          @parsed.store(key.capitalize.camelize, newSwiftClass)
           # string = "var #{key}#{get_array_attribute_literal key}\n"
           # swiftClass = swiftClass + string
-          attribute = Attribute.new(key, "#{key.capitalize}", true)
+          attribute = Attribute.new(key, "#{key}", true)
           swiftClassAttributes.push(attribute)
         else
           # string = "var #{key}: [#{attribute_type value.first}] = []\n"
@@ -142,22 +157,23 @@ REALMCLASS
 \t\t\t\tself.init()
 \t\t}
 DEFAULT
-
+  # (map["friends"], ListTransform<User>())
   attribute_literals = ""
-
+  mapping_literals = ""
   attributes.each do |attribute|
     attribute_literal = ""
+    mapping_literal = ""
     if attribute.is_array
-      attribute_literal = "\t\tvar #{attribute.name}#{get_array_attribute_literal attribute.type}\n"
+      attribute_literal = "\t\tvar #{attribute.name.camelize}#{get_array_attribute_literal attribute.type}\n"
+      mapping_literal = "\t\t\t\t#{attribute.name.camelize} <- #{get_array_mapping_literal attribute.type}\n"
     else
       default_value = attribute.default_value
       default_value = default_value.nil? ? "?" : " = #{default_value}"
-      attribute_literal = "\t\t#{get_attribute_literal_prefix}var #{attribute.name}: #{attribute.type}#{default_value}\n"
-      if attribute.type == "User"
-        binding.pry
-      end
+      attribute_literal = "\t\t#{get_attribute_literal_prefix}var #{attribute.name.camelize}: #{attribute.type.capitalize}#{default_value}\n"
+      mapping_literal = "\t\t\t\t#{attribute.name.camelize} <- map[\"#{attribute.name}\"]\n"
     end
     attribute_literals += attribute_literal
+    mapping_literals += mapping_literal
   end
 
 
@@ -166,7 +182,7 @@ class #{class_name}:#{@realm? " Object," : ""} Mappable {
 #{attribute_literals}
 #{@realm? realm_funcs : non_realm_funcs}
 \t\tfunc mapping(map: Map) {
-\t\t
+#{mapping_literals}
 \t\t}
 }\n
 CLASS

@@ -12,7 +12,9 @@ class Specifications: Object, Mappable {
 		}
 
 		func mapping(map: Map) {
-		
+				key <- map["key"]
+				value <- map["value"]
+
 		}
 }
 

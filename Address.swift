@@ -1,8 +1,8 @@
 class Address: Object, Mappable {
 		@objc dynamic var latitude: Double = 0.0
 		@objc dynamic var longitude: Double = 0.0
-		@objc dynamic var street_name: String = ""
-		@objc dynamic var user_id: Int = 0
+		@objc dynamic var streetName: String = ""
+		@objc dynamic var userId: Int = 0
 
 		required convenience init?(map: Map) {
 				self.init()
@@ -14,7 +14,11 @@ class Address: Object, Mappable {
 		}
 
 		func mapping(map: Map) {
-		
+				latitude <- map["latitude"]
+				longitude <- map["longitude"]
+				streetName <- map["street_name"]
+				userId <- map["user_id"]
+
 		}
 }
 

@@ -1,4 +1,4 @@
-class Products: Object, Mappable {
+class ProductsItem: Object, Mappable {
 		@objc dynamic var id: Int = 0
 		@objc dynamic var name: String = ""
 		@objc dynamic var price: Int = 0
