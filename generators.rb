@@ -21,7 +21,9 @@ OptionParser.new do |opt|
   opt.on('--model MODEL') { |o| @model_name = "#{o.capitalize}" }
 
   # ATTRIBUTEs   eg name:String?  price:Double?
-  opt.on('-a ATTRIBUTE') { |o| @attributes.push(o) }
+  opt.on("--a x,y,z","--elements x,y,z", Array,
+       "which jurisdiction will start") { |array|  @attributes = array }
+
   opt.on('--attribute ATTRIBUTE') { |o| @attributes.push(o) }
 
   #to_one_relations
